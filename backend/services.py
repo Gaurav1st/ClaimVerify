@@ -14,8 +14,8 @@ def search_evidence(query: str, limit: int = 6) -> List[Dict]:
     try:
         from ddgs import DDGS
 
-        results = DDGS().text(query, max_results=limit)
-
+        results = DDGS(impersonate=None).text(query, max_results=limit)
+        
         evidence = []
 
         for item in results or []:
