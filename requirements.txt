@@ -4,5 +4,5 @@ pydantic==2.10.6
 requests==2.32.3
 ddgs==9.5.2
 streamlit==1.43.2
-groq
+groq==1.7.0
 python-dotenv

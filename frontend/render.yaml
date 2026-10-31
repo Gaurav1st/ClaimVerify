@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: claimverify-frontend
+    runtime: python
+    buildCommand: pip install -r ../requirements.txt
+    startCommand: streamlit run app.py --server.port $PORT --server.address 0.0.0.0 --server.headless=true
+    envVars:
+      - key: API_URL
+        value: https://claimverify-api.onrender.com
+      - key: API_TIMEOUT
+        value: 120
+      - key: PYTHON_VERSION
+        value: 3.12.10

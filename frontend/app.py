@@ -14,6 +14,7 @@ st.set_page_config(
 
 # API configuration
 API_URL = os.getenv("API_URL", "http://localhost:8000")
+API_TIMEOUT = int(os.getenv("API_TIMEOUT", "120"))
 
 # Custom CSS for premium design
 st.markdown("""
@@ -803,7 +804,7 @@ def main():
             response = requests.post(
                 f"{API_URL}/verify",
                 json={"claim": claim.strip()},
-                timeout=60
+                timeout=API_TIMEOUT
             )
             response.raise_for_status()
             result = response.json()

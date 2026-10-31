@@ -14,7 +14,7 @@ def search_evidence(query: str, limit: int = 6) -> List[Dict]:
     try:
         from ddgs import DDGS
 
-        results = DDGS(impersonate=None).text(query, max_results=limit)
+        results = DDGS().text(query, max_results=limit)
         
         evidence = []
 
@@ -35,7 +35,7 @@ def search_evidence(query: str, limit: int = 6) -> List[Dict]:
 
 def analyze_with_groq(claim: str, evidence: List[Dict]):
     api_key = os.getenv("GROQ_API_KEY")
-    model = os.getenv("GROQ_MODEL", "openai/gpt-oss-120b")
+    model = os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile")
 
     if not api_key:
         raise ValueError("GROQ_API_KEY is missing.")
