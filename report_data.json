@@ -1,0 +1,33 @@
+{
+  "project_title": "AI Misinformation & Claim Verification Assistant",
+  "short_name": "ClaimVerify",
+  "team": [
+    {
+      "name": "Brijesh Kumar Trigun",
+      "roll": "2401920100129"
+    },
+    {
+      "name": "Anmol Sherawat",
+      "roll": "2401920100073"
+    },
+    {
+      "name": "Anurag Mishra",
+      "roll": "2401920100084"
+    },
+    {
+      "name": "Gaurav Dwivedi",
+      "roll": "2401920100145"
+    }
+  ],
+  "guide": "Anam Reyaz",
+  "hod": "Sansar Chauhan",
+  "session": "2026-2027",
+  "stack": [
+    "Python",
+    "FastAPI",
+    "Streamlit",
+    "DDGS web search",
+    "Groq API (optional)"
+  ],
+  "status": "Prototype source code prepared; local execution and deployment pending"
+}
