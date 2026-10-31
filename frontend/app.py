@@ -795,15 +795,17 @@ def main():
     if verify_clicked and len(claim.strip()) >= 8:
         st.session_state["clear_input"] = True
         st.session_state["verifying"] = True
+        st.session_state["current_claim"] = claim.strip()
 
     # Show loading state
     if st.session_state.get("verifying"):
         render_loading()
 
         try:
+            current_claim = st.session_state.get("current_claim", claim.strip())
             response = requests.post(
                 f"{API_URL}/verify",
-                json={"claim": claim.strip()},
+                json={"claim": current_claim},
                 timeout=API_TIMEOUT
             )
             response.raise_for_status()
